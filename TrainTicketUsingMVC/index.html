@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link href="style.css">
+<style> 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+   text-align:center;
+  }
+  .container {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  input[type="text"],[type="date"], select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }.table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+  button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+}
+  </style>
+</head>
+<body>
+<div class="container">
+  <h2>Train Ticket Booking</h2>
+  <form id="bookingForm" action="DataProcessor">
+    <label for="from">From:</label>
+    <select id="from" name="from" required></select>
+    
+    <label for="to">To:</label>
+    <select id="to" name="to" required></select>
+    
+    <label for="trainName">Train Name:</label>
+    <select id="trainName" name="trainName" required></select>
+    
+    <label for="class">Class:</label>
+    <select id="class" name="class">
+      <option value="economy">Economy</option>
+      <option value="business">Business</option>
+      <option value="firstClass">First Class</option>
+    </select>
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date" required>
+    <h2><b>Passengers</b></h2>
+	<div class="table-container">
+    <table class="table table-bordered text-center" style=" border: 2px solid ;">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Age</th>
+      </tr>
+    </thead>
+    <tbody id="passengersTableBody">
+     
+    </tbody>
+  </table></div><br>
+    <button type="button" id="addPassengerButton">Add Passenger</button><br><br>
+    <button type="submit">Book Ticket</button>
+  </form>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
